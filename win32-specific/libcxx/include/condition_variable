@@ -1,0 +1,10 @@
+#pragma once
+#if _MSC_VER < 1800
+
+#include <boost/thread/condition_variable.hpp>
+
+namespace std
+{
+	typedef boost::condition_variable condition_variable;
+};
+#endif
