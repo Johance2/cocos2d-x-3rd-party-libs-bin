@@ -1,10 +1,15 @@
 #pragma once
 #if _MSC_VER < 1800
 
-#include <boost/thread/condition_variable.hpp>
+	#include <boost/thread/condition_variable.hpp>
 
-namespace std
-{
-	typedef boost::condition_variable condition_variable;
-};
+	namespace std
+	{
+		typedef boost::condition_variable condition_variable;
+	};
+#else
+	#ifndef boost
+	#define boost std
+	#endif
+	#include <../../VC/include/condition_variable>
 #endif

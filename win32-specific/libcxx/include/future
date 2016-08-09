@@ -1,3 +1,8 @@
 #pragma once
 #if _MSC_VER < 1800
+#else
+	#ifndef boost
+	#define boost std
+	#endif
+#include <../../VC/include/future>
 #endif

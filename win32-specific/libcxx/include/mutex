@@ -1,4 +1,9 @@
 #pragma once
 #if _MSC_VER < 1800
-#include <boost/thread/mutex.hpp>
+	#include <boost/thread/mutex.hpp>
+#else
+	#ifndef boost
+	#define boost std
+	#endif
+#include <../../VC/include/mutex>
 #endif
